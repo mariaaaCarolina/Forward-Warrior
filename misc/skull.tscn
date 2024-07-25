@@ -1,0 +1,83 @@
+[gd_scene load_steps=6 format=3 uid="uid://bf5nwcn2ttjga"]
+
+[ext_resource type="Texture2D" uid="uid://dlusvojgp405r" path="res://Assets/Tiny Swords/Tiny Swords (Update 010)/Factions/Knights/Troops/Dead/Dead.png" id="1_w3ep5"]
+
+[sub_resource type="GDScript" id="GDScript_gf7si"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+\"res://Test_Scenes/test_ui.tscn\"
+"
+
+[sub_resource type="Animation" id="Animation_mmdj1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_r5s73"]
+resource_name = "default"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(6, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ht3f8"]
+_data = {
+"RESET": SubResource("Animation_mmdj1"),
+"default": SubResource("Animation_r5s73")
+}
+
+[node name="Skull" type="Sprite2D"]
+position = Vector2(188, 149)
+texture = ExtResource("1_w3ep5")
+offset = Vector2(0, -30)
+hframes = 7
+vframes = 2
+script = SubResource("GDScript_gf7si")
+
+[node name="AnimatedSprite2D" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ht3f8")
+}
+autoplay = "default"

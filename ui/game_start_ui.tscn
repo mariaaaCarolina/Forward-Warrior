@@ -1,0 +1,472 @@
+[gd_scene load_steps=22 format=3 uid="uid://ghim7ytkkw2p"]
+
+[ext_resource type="Script" path="res://ui/game_start_ui.gd" id="1_td2yl"]
+[ext_resource type="Texture2D" uid="uid://3qy4iiaqc207" path="res://Assets/Tiny Swords/Tiny Swords (Update 010)/UI/Ribbons/Ribbon_Red_3Slides.png" id="2_hfs1g"]
+[ext_resource type="Texture2D" uid="uid://gkybfrkyuekg" path="res://Assets/Tiny Swords/Tiny Swords (Update 010)/UI/Banners/Banner_Horizontal.png" id="3_r2am0"]
+[ext_resource type="Texture2D" uid="uid://dhth2ox7lf58w" path="res://Assets/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Red.png" id="4_qc7kg"]
+[ext_resource type="Texture2D" uid="uid://b2nix62tm166f" path="res://Assets/kenney_ui-pack/Vector/Extra/icon_play_dark.svg" id="5_dtvoi"]
+[ext_resource type="Texture2D" uid="uid://d3dnry6quls03" path="res://Assets/Tiny Swords/Tiny Swords (Update 010)/UI/Buttons/Button_Red_3Slides.png" id="6_njqb1"]
+
+[sub_resource type="Animation" id="Animation_2wt7p"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackGround:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.788235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackGround/TopPanel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.24901, 1),
+"update": 0,
+"values": [Vector2(325, 48), Vector2(325, 43)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackGround/BottonPanel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(188, 700), Vector2(188, 243)]
+}
+
+[sub_resource type="Animation" id="Animation_68ec5"]
+resource_name = "default"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BackGround:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 9.18952),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.780392)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BackGround/TopPanel:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 0.196147),
+"update": 0,
+"values": [Vector2(308, -200), Vector2(308, 43)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BackGround/BottonPanel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4, 1.4),
+"transitions": PackedFloat32Array(1, 1.03526),
+"update": 0,
+"values": [Vector2(407, 700), Vector2(407, 479)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gg6my"]
+_data = {
+"RESET": SubResource("Animation_2wt7p"),
+"default": SubResource("Animation_68ec5")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4swlv"]
+texture = ExtResource("2_hfs1g")
+texture_margin_left = 64.0
+texture_margin_right = 64.0
+axis_stretch_horizontal = 2
+region_rect = Rect2(0, 0, 192, 64)
+
+[sub_resource type="SystemFont" id="SystemFont_8rj5a"]
+font_names = PackedStringArray("Serif", "Juice ITC")
+font_weight = 999
+font_stretch = 150
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_7e4n4"]
+line_spacing = 8.0
+font = SubResource("SystemFont_8rj5a")
+font_size = 32
+font_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+outline_size = 3
+outline_color = Color(0.196078, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jvmdg"]
+texture = ExtResource("3_r2am0")
+texture_margin_left = 32.0
+texture_margin_top = 16.0
+texture_margin_right = 32.0
+texture_margin_bottom = 48.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+region_rect = Rect2(32, 48, 128, 128)
+
+[sub_resource type="SystemFont" id="SystemFont_r0mbv"]
+font_names = PackedStringArray("Serif", "Eras ITC")
+font_weight = 700
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_s0e4d"]
+font = SubResource("SystemFont_r0mbv")
+font_size = 20
+font_color = Color(0, 0, 0, 0.862745)
+outline_size = 3
+outline_color = Color(0.196078, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_11ms3"]
+font_names = PackedStringArray("Serif", "Eras ITC")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ilk2v"]
+font = SubResource("SystemFont_11ms3")
+font_size = 30
+font_color = Color(0, 0, 0, 0.92549)
+outline_size = 4
+outline_color = Color(0.196078, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_1uxsr"]
+font_names = PackedStringArray("Serif", "Eras ITC")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_ipljb"]
+font = SubResource("SystemFont_1uxsr")
+font_size = 17
+outline_size = 16
+outline_color = Color(0.00392157, 0.00392157, 0.00392157, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_o744u"]
+font_names = PackedStringArray("Serif", "Eras ITC")
+font_weight = 999
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_63vq4"]
+font = SubResource("SystemFont_o744u")
+font_size = 27
+font_color = Color(0.643137, 0, 0.0705882, 1)
+outline_size = 18
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 22
+
+[node name="GameStartUI" type="CanvasLayer"]
+script = ExtResource("1_td2yl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gg6my")
+}
+autoplay = "RESET"
+
+[node name="BackGround" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TopPanel" type="Panel" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 325.0
+offset_top = 48.0
+offset_right = 833.0
+offset_bottom = 181.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4swlv")
+
+[node name="GameOverLabel" type="Label" parent="BackGround/TopPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -308.0
+offset_top = -80.5
+offset_right = 6.0
+offset_bottom = -17.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "STARTED"
+label_settings = SubResource("LabelSettings_7e4n4")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BottonPanel" type="Panel" parent="BackGround"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 188.0
+offset_top = 700.0
+offset_right = 973.001
+offset_bottom = 924.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jvmdg")
+
+[node name="texts" type="Label" parent="BackGround/BottonPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = -181.0
+offset_top = 154.0
+offset_right = 953.0
+offset_bottom = 176.0
+text = "Avanced Attacks                      Moviments                          Simple Attack"
+label_settings = SubResource("LabelSettings_s0e4d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ataques" type="Node2D" parent="BackGround/BottonPanel"]
+scale = Vector2(1.74119, 1.54979)
+
+[node name="ButtonRed4" type="Sprite2D" parent="BackGround/BottonPanel/Ataques"]
+z_index = 1
+position = Vector2(47.7264, 75.148)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="Label" type="Label" parent="BackGround/BottonPanel/Ataques/ButtonRed4"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 133.647
+offset_top = -55.7714
+offset_right = 154.647
+offset_bottom = -23.7714
+grow_vertical = 2
+text = "D"
+label_settings = SubResource("LabelSettings_ilk2v")
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonRed7" type="Sprite2D" parent="BackGround/BottonPanel/Ataques"]
+z_index = 1
+position = Vector2(123.726, 75.148)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="Label2" type="Label" parent="BackGround/BottonPanel/Ataques/ButtonRed7"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5882
+offset_top = -123.429
+offset_right = 94.4118
+offset_bottom = -91.4286
+grow_vertical = 2
+text = "W"
+label_settings = SubResource("LabelSettings_ilk2v")
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonRed6" type="Sprite2D" parent="BackGround/BottonPanel/Ataques"]
+z_index = 1
+position = Vector2(85.7264, 75.148)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="Label3" type="Label" parent="BackGround/BottonPanel/Ataques/ButtonRed6"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -7.52939
+offset_top = -55.7714
+offset_right = 173.471
+offset_bottom = -23.7714
+grow_vertical = 2
+text = "S"
+label_settings = SubResource("LabelSettings_ilk2v")
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonRed5" type="Sprite2D" parent="BackGround/BottonPanel/Ataques"]
+z_index = 1
+position = Vector2(85.7264, 38.148)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="Label4" type="Label" parent="BackGround/BottonPanel/Ataques/ButtonRed5"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -82.8235
+offset_top = 11.8857
+offset_right = 98.1765
+offset_bottom = 43.8857
+grow_vertical = 2
+text = "A"
+label_settings = SubResource("LabelSettings_ilk2v")
+metadata/_edit_use_anchors_ = true
+
+[node name="Movimentos" type="Node2D" parent="BackGround/BottonPanel"]
+scale = Vector2(1.99683, 1.57043)
+
+[node name="ButtonRed4" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos"]
+z_index = 1
+position = Vector2(156.471, 74.8766)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="Label" type="Label" parent="BackGround/BottonPanel/Movimentos/ButtonRed4"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 133.647
+offset_top = -55.7714
+offset_right = 154.647
+offset_bottom = -23.7714
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ilk2v")
+metadata/_edit_use_anchors_ = true
+
+[node name="IconPlayDark" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos/ButtonRed4"]
+z_index = 2
+position = Vector2(143.529, -7.16799)
+scale = Vector2(0.847061, 0.582989)
+texture = ExtResource("5_dtvoi")
+
+[node name="ButtonRed7" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos"]
+z_index = 1
+position = Vector2(232.471, 74.8766)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="Label2" type="Label" parent="BackGround/BottonPanel/Movimentos/ButtonRed7"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5882
+offset_top = -123.429
+offset_right = 94.4118
+offset_bottom = -91.4286
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ilk2v")
+
+[node name="IconPlayDark2" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos/ButtonRed7"]
+z_index = 2
+position = Vector2(-71.5294, -6.39999)
+rotation = 1.56832
+scale = Vector2(0.847, 0.626391)
+texture = ExtResource("5_dtvoi")
+
+[node name="ButtonRed6" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos"]
+z_index = 1
+position = Vector2(194.471, 74.8766)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="IconPlayDark3" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos/ButtonRed6"]
+z_index = 2
+position = Vector2(2.39015e-05, -75.8857)
+rotation = -1.5598
+scale = Vector2(0.861217, 0.660069)
+texture = ExtResource("5_dtvoi")
+
+[node name="Label3" type="Label" parent="BackGround/BottonPanel/Movimentos/ButtonRed6"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -7.52939
+offset_top = -55.7714
+offset_right = 173.471
+offset_bottom = -23.7714
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ilk2v")
+
+[node name="ButtonRed5" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos"]
+z_index = 1
+position = Vector2(194.471, 37.8766)
+scale = Vector2(0.53125, 0.546875)
+texture = ExtResource("4_qc7kg")
+
+[node name="Label4" type="Label" parent="BackGround/BottonPanel/Movimentos/ButtonRed5"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -82.8235
+offset_top = 11.8857
+offset_right = 98.1765
+offset_bottom = 43.8857
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_ilk2v")
+
+[node name="IconPlayDark4" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos/ButtonRed5"]
+z_index = 2
+position = Vector2(-72.7831, 61.2662)
+rotation = 3.15605
+scale = Vector2(0.867772, 0.571653)
+texture = ExtResource("5_dtvoi")
+
+[node name="ButtonRed3Slides" type="Sprite2D" parent="BackGround/BottonPanel/Movimentos"]
+z_index = 2
+position = Vector2(316.63, 58.2946)
+scale = Vector2(0.538034, 0.425185)
+texture = ExtResource("6_njqb1")
+
+[node name="Label5" type="Label" parent="BackGround/BottonPanel/Movimentos/ButtonRed3Slides"]
+z_index = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -28.8575
+offset_top = -55.9624
+offset_right = 152.143
+offset_bottom = -23.9624
+grow_vertical = 2
+text = "TAB"
+label_settings = SubResource("LabelSettings_ilk2v")
+
+[node name="Label" type="Label" parent="BackGround/BottonPanel"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 232.0
+offset_right = 521.0
+offset_bottom = 255.0
+scale = Vector2(1.22709, 1.38255)
+text = "The game will start in seconds...wait"
+label_settings = SubResource("LabelSettings_ipljb")
+
+[node name="Label2" type="Label" parent="BackGround/BottonPanel"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 288.0
+offset_right = 1003.0
+offset_bottom = 351.0
+text = "Get the meat and recover health points, collect bags of gold and
+                          KILL THE MONSTERS!!!!!!!!!"
+label_settings = SubResource("LabelSettings_63vq4")

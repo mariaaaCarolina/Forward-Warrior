@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxqi7ikleiaif"]
+
+[ext_resource type="PackedScene" uid="uid://c3v2cykb7evrn" path="res://Player/player.tscn" id="1_gsafp"]
+[ext_resource type="PackedScene" uid="uid://c7x7863rvrens" path="res://systems/mob_spawner.tscn" id="2_3w12s"]
+
+[node name="TestMobSpawning" type="Node2D"]
+position = Vector2(587, 336)
+
+[node name="Player" parent="." instance=ExtResource("1_gsafp")]
+position = Vector2(-330, -140)
+sword_damage = 2
+ritual_damage = 1.0
+
+[node name="MobSpawner" parent="." instance=ExtResource("2_3w12s")]
+position = Vector2(-409, 124)
+scale = Vector2(1.39906, 1.18739)

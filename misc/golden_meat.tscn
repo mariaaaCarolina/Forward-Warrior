@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://2r41en48w6l0"]
+
+[ext_resource type="PackedScene" uid="uid://ca8dou06as8nj" path="res://golden_meat.tscn" id="1_onbaa"]
+
+[node name="GoldenMeat" type="Node2D"]
+
+[node name="Meat" parent="." instance=ExtResource("1_onbaa")]
+frame = 3
+frame_progress = 0.628458
+regeneration_amount = 100

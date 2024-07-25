@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbaqpyvuqtkpc"]
+
+[ext_resource type="PackedScene" uid="uid://c3v2cykb7evrn" path="res://Player/player.tscn" id="1_l7mk2"]
+[ext_resource type="PackedScene" uid="uid://cctmwbp6ax7nb" path="res://misc/meat.tscn" id="2_jxqaf"]
+[ext_resource type="PackedScene" uid="uid://bg0a2xyh4mar3" path="res://addons/Enimies/sheep.tscn" id="3_1amxy"]
+[ext_resource type="PackedScene" uid="uid://dm7xtgpjypn7" path="res://addons/Enimies/pawn.tscn" id="4_60104"]
+[ext_resource type="PackedScene" uid="uid://dhpvb5do5niml" path="res://addons/Enimies/goblin.tscn" id="5_r8kox"]
+[ext_resource type="PackedScene" uid="uid://dxyw35u1jgsk2" path="res://ui/game_ui.tscn" id="6_r4c1h"]
+
+[node name="TestMeat" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_l7mk2")]
+position = Vector2(123, 137)
+sword_damage = 2
+ritual_damage = 1.0
+
+[node name="Meat" parent="." instance=ExtResource("2_jxqaf")]
+position = Vector2(874, 468)
+
+[node name="Meat2" parent="." instance=ExtResource("2_jxqaf")]
+position = Vector2(734, 555)
+
+[node name="Sheep" parent="." instance=ExtResource("3_1amxy")]
+position = Vector2(726, 168)
+death_prefab = null
+drop_chance = 0.1
+drop_items = Array[PackedScene]([])
+
+[node name="Sheep2" parent="." instance=ExtResource("3_1amxy")]
+position = Vector2(685, 221)
+death_prefab = null
+drop_chance = 0.1
+drop_items = Array[PackedScene]([])
+
+[node name="Sheep3" parent="." instance=ExtResource("3_1amxy")]
+position = Vector2(776, 221)
+death_prefab = null
+drop_chance = 0.1
+drop_items = Array[PackedScene]([])
+
+[node name="Pawn" parent="." instance=ExtResource("4_60104")]
+position = Vector2(622, 130)
+death_prefab = null
+drop_items = Array[PackedScene]([])
+
+[node name="Goblin" parent="." instance=ExtResource("5_r8kox")]
+position = Vector2(878, 185)
+death_prefab = null
+drop_chance = 0.1
+drop_items = Array[PackedScene]([])
+
+[node name="GameUI" parent="." instance=ExtResource("6_r4c1h")]
+
+[connection signal="meat_collected" from="Player" to="Player" method="_on_meat_collected"]
